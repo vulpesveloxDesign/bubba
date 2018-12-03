@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="shortcut icon" href="{% static 'favicon.ico' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+  {% if title %}
+    <title>{% block head_title %}BiG® - {{ title }}{% endblock %}</title>
+  {% else %}
+    <title>BiG®</title>
+  {% endif %}
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <div class="container">
+        <a class="navbar-brand mr-4" href="{% url 'vault:home' %}"><img src="{% static 'vault/big_logo.png' %}" width="60" height="60"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+            <h5>
+            <a href="{% url 'vault:product' %}">produkter</a>
+            <a href="{% url 'vault:water_quality' %}">check min vandkvalitet</a>
+            <a href="{% url 'vault:get_name' %}">fix mit skema</a>
+            <a href="{% url 'vault:contact' %}">kontakt BiG<sup>®</sup></a>
+            <a href="{% url 'vault:downloads' %}">downloads</a>
+            <a href="#">search</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+      </nav>
+    </header>
+    <div style="max-width: 100%; background-color:#ffffff; border-radius:6px; margin:80px 10px 20px; padding:0px 20px 20px;">
+      <img src="static/vault/banner.jpg"/>
+      {% block content %}
+      {% endblock %}
+    </div>
+    </div>
+    <div align="center" style="background-color:#ffffff; max-width:100%; min-height:60px; margin:0px 10px 50px; padding:20px 20px 20px; border-radius:5px;">
+      <div align="left" style="color:565656; border:2px dotted #565656; border-radius: 5px;width:300px; padding:5px;">
+        tlf.: +45 50 50 32 23 | CVR-VAT: DK34807574<br/>
+        adr.: Frederikssundsvej 121 F, 2700 Brønshøj<br/>
+      </div>
+    </div>
+
+</body>
+</html>

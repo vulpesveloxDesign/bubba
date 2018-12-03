@@ -1,0 +1,94 @@
+{% extends 'vault/base.html' %}
+{% block content %}
+  <table border="1" cellpadding="10" cellspacing="0" style="margin-top:20px;" max-width="100%">
+    <tr>
+      <td colspan="2" align="center">
+        <h1>Dyrknings-skema:</h1>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <b>Metode:</b><br> {{ method }}<br>
+      </td>
+      <td>
+        {% if method == 'terra' %}
+          nå, så du bruger jord, hva'?
+        {% elif method == 'aqua' %}
+          det er det rene vand!
+        {% elif method == 'coco' %}
+          PAS PÅ! KOKOSNØD!
+        {% elif method == 'COGr' %}
+          aner ik' hva' cogr er...
+        {% elif method == 'hydro, soft' %}
+          vildt, blødt, lækkert vand!
+        {% elif method == 'hydro, hard' %}
+          meget hårdt vand!
+        {% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Tankstørrelse (L):</b><br> {{ tank_size }}
+      </td>
+      <td>
+        Tankstørrelse * 420 = {{ tankolator }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Vandtype:</b><br> {{ water_type }}
+      </td>
+      <td>
+        {% if water_type == 'blødt vand' %}
+          vældig godt for håret, siges det...
+        {% elif water_type == 'middelhårdt vand' %}
+          muligvis årsag til åreforkalkning!
+        {% elif water_type == 'hårdt vand' %}
+          det hér... DET får man fine, hvide tænder af. Slut med fluorskylning!
+        {% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Hårdhed:</b><br> {{ water_hardness }}
+      </td>
+      <td>
+        Hårdhed * 420 = {{ hardnessolator }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Rytme:</b><br> {{ rhythm }}
+      </td>
+      <td>
+        {% if rhythm == 'let kost' %}
+          det bliver man tynd af
+        {% elif rhythm == 'mellem kost' %}
+          det bliver man almindelig af
+        {% elif rhythm == 'tung kost' %}
+          det bliver man tyk af
+        {% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Ledeevne:</b><br> {{ conductivity }}
+      </td>
+      <td>
+        {% if conductivity == 'PPM (truncheon)' %}
+          220.00 V vekselstrøm!
+        {% elif conductivity == 'PPM (eutech)' %}
+          det hér kan blive høj af.
+        {% elif conductivity == 'PPM (hanna)' %}
+          det bliver man stensikkert tyk af
+        {% elif conductivity == 'EC' %}
+          sæt connector pin'en fast på bundkortet og skyd slæden ud.
+        {% elif conductivity == 'CF' %}
+          Se nedenfor:
+        {% endif %}
+        <br>
+        what am I, a plant scientist?
+      </td>
+    </tr>
+  </table>
+{% endblock %}
