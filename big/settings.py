@@ -12,6 +12,16 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
+
+# me security additions, innit?
+SECURE_SSL_REDIRECT = True      # HTTPS secure!
+SECURE_HSTS_SECONDS = 31536000  # Strict Transport Security; set for a year.
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
