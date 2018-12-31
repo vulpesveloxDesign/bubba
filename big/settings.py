@@ -36,7 +36,8 @@ SECRET_KEY = '39&33i4sq#0t3^ypco1z90=m_3^u*)r5-a%^+geef5j@foa9kp'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-'pythonanywhere.com'
+'localhost',
+'vulpesvelox.pythonanywhere.com',
 ]
 
 
